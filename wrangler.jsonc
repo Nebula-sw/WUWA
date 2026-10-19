@@ -1,0 +1,6 @@
+// Cloudflare Workers 설정 — 서버 코드 없이 public/ 폴더를 그대로 올리는 정적 사이트
+{
+  "name": "wuwa",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./public" }
+}

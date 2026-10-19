@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>네뷸라 · 명조</title>
+<meta name="description" content="명조: 워더링 웨이브 캐릭터별 육성 목표 · 에코 · 무기 추천">
+<!-- 스마트폰 홈 화면에 추가했을 때: 앱 이름·아이콘·주소창 없이 앱처럼 열기 (manifest.webmanifest) -->
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0e1014">
+<meta name="apple-mobile-web-app-title" content="네뷸라 명조">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- 탭 아이콘 · 홈 화면 아이콘 · 카톡 등 공유 썸네일 (Nebula 공용 디자인, 원본: nebula-hub/docs/og/) -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nebula">
+<meta property="og:title" content="네뷸라 · 명조">
+<meta property="og:description" content="캐릭터별 육성 목표 · 에코 · 무기 추천">
+<meta property="og:url" content="https://wuwa.nebula.kim/">
+<meta property="og:image" content="https://wuwa.nebula.kim/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  // 저장된 화면 모드(라이트/다크/시스템)를 그리기 전에 적용 (깜빡임 방지)
+  // 바꾸는 화면은 맨 위 Nebula 바의 [테마] 버튼(nebula.kim/switcher.js). 색 테마는 없음
+  try {
+    const t = localStorage.getItem('theme');
+    if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+  } catch {}
+</script>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0e1014;
+    --panel: #161920;
+    --well: #1d2129;
+    --line: #262b35;
+    --text: #eef1f6;
+    --text-2: #c2c8d3;
+    --muted: #8a93a3;
+    --accent: #e2c86a; /* 금색 포인트 */
+    --nebula-bar-bg: #0e1014; --nebula-bar-fg: #eef1f6; --nebula-bar-muted: #8a93a3;
+    --nebula-bar-border: #262b35; --nebula-bar-active: #262b35; --nebula-bar-panel: #161920; --nebula-bar-accent: #c9a93c;
+  }
+  /* 라이트 모드: 바에서 '라이트'를 골랐을 때 + '시스템'인데 기기가 라이트일 때. 두 블록 내용은 같게 유지 */
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f3f4f7; --panel: #ffffff; --well: #f2f3f6; --line: #e1e4ea;
+    --text: #161a22; --text-2: #3a4250; --muted: #677083; --accent: #a8861c;
+    --nebula-bar-bg: #ffffff; --nebula-bar-fg: #161a22; --nebula-bar-muted: #677083;
+    --nebula-bar-border: #e1e4ea; --nebula-bar-active: #eceef2; --nebula-bar-panel: #ffffff;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      color-scheme: light;
+      --bg: #f3f4f7; --panel: #ffffff; --well: #f2f3f6; --line: #e1e4ea;
+      --text: #161a22; --text-2: #3a4250; --muted: #677083; --accent: #a8861c;
+      --nebula-bar-bg: #ffffff; --nebula-bar-fg: #161a22; --nebula-bar-muted: #677083;
+      --nebula-bar-border: #e1e4ea; --nebula-bar-active: #eceef2; --nebula-bar-panel: #ffffff;
+    }
+  }
+
+  /* 속성 색 (위키 표와 같은 색) */
+  [data-el="기류"] { --el: #5ED9B2; }
+  [data-el="용융"] { --el: #DB7948; }
+  [data-el="응결"] { --el: #63CFE8; }
+  [data-el="전도"] { --el: #B757D2; }
+  [data-el="인멸"] { --el: #D96497; }
+  [data-el="회절"] { --el: #DCC845; }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    font: 14px/1.55 system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  }
+  main { max-width: 1320px; margin: 0 auto; padding: 24px 16px 64px; }
+  header.top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+  header.top h1 { margin: 0; font-size: 24px; font-weight: 800; }
+  header.top h1 span { color: var(--accent); }
+  header.top .meta { font-size: 12px; color: var(--muted); }
+
+  /* ── 검색·필터 ── */
+  .search { width: 100%; padding: 11px 14px; font: inherit; color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; outline: none; }
+  .search:focus { border-color: var(--accent); }
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 12px 0 18px; }
+  .chip { font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--text-2); cursor: pointer; }
+  .chip:hover { color: var(--text); }
+  .chip.on { background: var(--el, var(--accent)); border-color: var(--el, var(--accent)); color: #111; font-weight: 700; }
+  .chip[data-el]::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--el); margin-right: 6px; }
+  .chip.on[data-el]::before { background: #111; }
+  .count { margin-left: auto; font-size: 13px; color: var(--muted); }
+  .count b { color: var(--text); }
+
+  /* ── 카드 ── */
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); }
+  .card {
+    position: relative; overflow: hidden; border-radius: 14px; background: var(--panel); border: 1px solid var(--line);
+    border-top: 3px solid var(--el); display: flex; flex-direction: column;
+  }
+  .card .head {
+    display: flex; gap: 12px; align-items: center; padding: 14px 16px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--el) 18%, transparent), transparent);
+  }
+  .avatar {
+    width: 60px; height: 60px; flex: none; border-radius: 12px; overflow: hidden; background: var(--well);
+    border: 2px solid color-mix(in srgb, var(--el) 70%, transparent);
+    display: grid; place-items: center; font-size: 24px; font-weight: 800; color: var(--el);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .name { font-size: 19px; font-weight: 800; line-height: 1.25; }
+  .pills { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 5px; }
+  .pill { font-size: 11px; line-height: 1; padding: 4px 7px; border-radius: 6px; border: 1px solid var(--line); color: var(--text-2); background: var(--well); }
+  .pill.el { background: var(--el); border-color: var(--el); color: #111; font-weight: 700; }
+
+  .body { padding: 4px 16px 16px; display: flex; flex-direction: column; gap: 12px; }
+  .sec h3 { margin: 0 0 6px; font-size: 11px; font-weight: 700; letter-spacing: .08em; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .sec h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .kv { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .box { padding: 7px 10px; border-radius: 8px; background: var(--well); border: 1px solid var(--line); font-size: 13px; white-space: pre-line; }
+  .box small { display: block; font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { font-size: 13px; padding: 5px 9px; border-radius: 8px; background: var(--well); border: 1px solid var(--line); }
+  .tag i { font-style: normal; font-size: 11px; color: var(--accent); margin-left: 5px; font-weight: 700; }
+  .tag.first { border-color: color-mix(in srgb, var(--accent) 60%, transparent); }
+  /* 에코 주옵: 코스트 배치 + 칸별 주옵 */
+  .mains { display: grid; grid-template-columns: auto repeat(3, 1fr); gap: 5px; }
+  .mains .layout { font-weight: 800; color: var(--accent); align-self: center; padding: 0 4px; white-space: pre-line; font-size: 12px; text-align: center; }
+  .mains .box { text-align: center; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .stats .box { text-align: center; }
+  .stats .box b { font-size: 15px; }
+  .notes { margin: 0; padding-left: 18px; color: var(--text-2); font-size: 13px; }
+  .empty { grid-column: 1 / -1; text-align: center; padding: 60px 0; color: var(--muted); }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 0 16px 32px; line-height: 1.7; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <header class="top">
+    <h1>명조 <span>잘키웠다표</span></h1>
+    <span class="meta" id="meta"></span>
+  </header>
+  <input class="search" id="q" type="search" placeholder="캐릭터, 무기, 에코 세트, 포지션 검색" autocomplete="off">
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"><div class="empty">불러오는 중…</div></div>
+</main>
+<footer id="footer"></footer>
+
+<script>
+// 데이터: public/data/characters.json (scripts/scrape.mjs 가 아카라이브 명조 위키에서 긁어 만든 파일)
+const ELEMENTS = ["기류", "용융", "응결", "전도", "인멸", "회절"];
+const state = { list: [], q: "", element: "" };
+const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+function card(c) {
+  const weapons = c.weapons.map((w, i) => `<span class="tag${i === 0 ? " first" : ""}">${esc(w.name)}${w.tag ? `<i>${esc(w.tag)}</i>` : ""}</span>`).join("");
+  const sets = c.echoSets.map((s) => `<span class="tag">${esc(s.name)}${s.tag ? `<i>${esc(s.tag)}</i>` : ""}</span>`).join("");
+  const mains = c.echoMains.map((m) => `<div class="layout">${esc(m.layout)}</div>${[0, 1, 2].map((i) => `<div class="box">${esc(m.slots[i] || "-")}</div>`).join("")}`).join("");
+  const crit = c.crit.map((x) => `<div class="box"><small>${esc(x.layout)}</small>${esc(x.text)}</div>`).join("");
+  const stats = c.stats.map((s) => `<div class="box"><small>${esc(s.label)}</small><b>${esc(s.value)}</b></div>`).join("");
+  const notes = c.notes.length ? `<div class="sec"><h3>참고사항</h3><ul class="notes">${c.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>` : "";
+  return `<article class="card" data-el="${esc(c.element)}">
+    <div class="head">
+      <div class="avatar">${c.image ? `<img src="${esc(c.image)}" alt="" loading="lazy">` : esc(c.name[0])}</div>
+      <div>
+        <div class="name">${esc(c.name)}</div>
+        <div class="pills"><span class="pill el">${esc(c.element)}</span><span class="pill">${esc(c.position)}</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="kv">
+        <div class="box"><small>스킬 우선순위</small>${esc(c.skill)}</div>
+        <div class="box"><small>노드 옵션</small>${esc(c.node)}</div>
+      </div>
+      <div class="sec"><h3>추천 무기</h3><div class="tags">${weapons}</div></div>
+      <div class="sec"><h3>에코 세트</h3><div class="tags">${sets}</div></div>
+      <div class="sec"><h3>에코 주옵 (코스트 배치 · 칸별)</h3><div class="mains">${mains}</div></div>
+      <div class="sec"><h3>목표 크리티컬</h3><div class="kv">${crit}</div></div>
+      <div class="sec"><h3>목표 스탯</h3><div class="stats">${stats}</div></div>
+      ${notes}
+    </div>
+  </article>`;
+}
+
+function render() {
+  const q = state.q.trim().toLowerCase();
+  const view = state.list.filter((c) => (!state.element || c.element === state.element) && (!q || c.text.includes(q)));
+  document.getElementById("grid").innerHTML = view.length ? view.map(card).join("") : `<div class="empty">조건에 맞는 캐릭터가 없어요</div>`;
+  document.getElementById("count").innerHTML = `<b>${view.length}</b> / ${state.list.length}명`;
+}
+
+function buildFilters() {
+  const box = document.getElementById("filters");
+  box.innerHTML = ["", ...ELEMENTS].map((e) => `<button class="chip${state.element === e ? " on" : ""}" ${e ? `data-el="${e}"` : ""} data-v="${e}">${e || "전체"}</button>`).join("") + `<span class="count" id="count"></span>`;
+  box.querySelectorAll("button").forEach((b) => (b.onclick = () => { state.element = b.dataset.v; buildFilters(); render(); }));
+}
+
+fetch("/data/characters.json")
+  .then((r) => r.json())
+  .then((d) => {
+    state.list = d.characters.map((c) => ({
+      ...c,
+      // 검색용 글자 모음
+      text: [c.name, c.element, c.position, c.skill, c.node, ...c.weapons.map((w) => w.name), ...c.echoSets.map((s) => s.name), ...c.notes].join(" ").toLowerCase(),
+    }));
+    document.getElementById("meta").textContent = `캐릭터 ${d.characters.length}명 · 위키 수정 ${d.wikiUpdated.slice(0, 10)}`;
+    document.getElementById("footer").innerHTML = `데이터 출처: <a href="${esc(d.source)}" target="_blank" rel="noopener">아카라이브 명조 채널 위키 · 이정도면 잘키웠다표</a><br>위키 내용을 옮겨 온 것이라 최신 내용은 원문을 확인해 주세요`;
+    buildFilters();
+    render();
+  })
+  .catch(() => (document.getElementById("grid").innerHTML = `<div class="empty">데이터를 불러오지 못했어요</div>`));
+
+document.getElementById("q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+</script>
+<!-- 맨 위 Nebula 사이트 전환 바 (사이트 목록은 nebula.kim/sites.json 한 곳에서 관리) -->
+<script src="https://nebula.kim/switcher.js" data-site="wuwa" defer></script>
+</body>
+</html>
