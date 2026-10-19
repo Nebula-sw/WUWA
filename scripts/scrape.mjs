@@ -8,14 +8,16 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
+import { execFileSync } from 'node:child_process'
 import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs'
 
 const URL_ = 'https://arca.live/w/wutheringwaves/%EC%9D%B4%EC%A0%95%EB%8F%84%EB%A9%B4%20%EC%9E%98%ED%82%A4%EC%9B%A0%EB%8B%A4%ED%91%9C'
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
 const browser = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] })
 const ctx = await browser.newContext({
-  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
+  userAgent: UA,
   locale: 'ko-KR',
 })
 const page = await ctx.newPage()
@@ -95,16 +97,23 @@ const data = await page.evaluate(() => {
 // 이미지 받기 (같은 브라우저 세션으로 받아야 봇 확인을 안 거침)
 for (const ch of data.characters) {
   if (!ch.imageSrc) continue
-  const file = `${ch.element}-${ch.name}.png`.replace(/[\\/:*?"<>| ]/g, '_') // 방랑자처럼 이름이 겹치는 경우가 있어 속성을 앞에 붙임
+  const base = `${ch.element}-${ch.name}`.replace(/[\\/:*?"<>| ]/g, '_') // 방랑자처럼 이름이 겹치는 경우가 있어 속성을 앞에 붙임
   try {
-    const res = await page.request.get(ch.imageSrc)
-    if (!res.ok()) throw new Error(String(res.status()))
-    fs.writeFileSync(path.join(root, 'public/img', file), await res.body())
-    ch.image = `/img/${file}`
+    // curl로 받음 (프록시 환경에서도 동작하도록. 브라우저 세션 쿠키·주소는 그대로 넘김)
+    const cookie = (await ctx.cookies(ch.imageSrc)).map((k) => `${k.name}=${k.value}`).join('; ')
+    const tmp = path.join(root, 'public/img', `${base}.tmp`)
+    execFileSync('curl', ['-sSf', '-m', '30', '-A', UA, '-e', URL_, ...(cookie ? ['-b', cookie] : []), '-o', tmp, ch.imageSrc])
+    // 실제 파일 형식에 맞는 확장자로 저장 (주소는 .png 여도 내용은 webp 인 경우가 많음)
+    const head = fs.readFileSync(tmp).subarray(0, 12).toString('latin1')
+    const ext = head.startsWith('RIFF') && head.includes('WEBP') ? 'webp' : head.includes('PNG') ? 'png' : 'jpg'
+    const file = `${base}.${ext}`
+    fs.renameSync(tmp, path.join(root, 'public/img', file))
+    ch.image = `/img/${encodeURIComponent(file)}`
   } catch (e) {
     // 못 받으면 예전에 받아 둔 파일이 있으면 그걸 씀 (없으면 화면에서 이름 첫 글자로 대신 표시)
     console.warn('이미지 실패', ch.name, e.message.split('\n')[0])
-    ch.image = fs.existsSync(path.join(root, 'public/img', file)) ? `/img/${file}` : ''
+    const old = ['webp', 'png', 'jpg'].map((e) => `${base}.${e}`).find((f) => fs.existsSync(path.join(root, 'public/img', f)))
+    ch.image = old ? `/img/${encodeURIComponent(old)}` : ''
   }
   delete ch.imageSrc
 }

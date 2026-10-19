@@ -1,7 +1,7 @@
 {
  "source": "https://arca.live/w/wutheringwaves/%EC%9D%B4%EC%A0%95%EB%8F%84%EB%A9%B4%20%EC%9E%98%ED%82%A4%EC%9B%A0%EB%8B%A4%ED%91%9C",
  "wikiUpdated": "2026-10-09 10:13:37",
- "scrapedAt": "2026-10-19T07:49:46.032Z",
+ "scrapedAt": "2026-10-19T08:03:13.571Z",
  "characters": [
   {
    "name": "기염",
@@ -62,7 +62,7 @@
    "notes": [
     "1체인에 공명스킬 1회 추가가 있어서 1체인 이상이면 요구 공효 수치가 낮아짐"
    ],
-   "image": ""
+   "image": "/img/%EA%B8%B0%EB%A5%98-%EA%B8%B0%EC%97%BC.webp"
   },
   {
    "name": "샤콘",
@@ -123,7 +123,7 @@
    "notes": [
     "카르티시아 전용 서포터로 사용"
    ],
-   "image": ""
+   "image": "/img/%EA%B8%B0%EB%A5%98-%EC%83%A4%EC%BD%98.webp"
   },
   {
    "name": "카르티시아",
@@ -185,7 +185,7 @@
     "샤콘과 기류 방랑자 파티 사용",
     "43111은 카멜 전무용임 전무는 44111"
    ],
-   "image": ""
+   "image": "/img/%EA%B8%B0%EB%A5%98-%EC%B9%B4%EB%A5%B4%ED%8B%B0%EC%8B%9C%EC%95%84.webp"
   },
   {
    "name": "방랑자",
@@ -249,7 +249,7 @@
     "파수인으로 대체 가능",
     "찬란한 광휘 사용시 기존 힐러 세팅 그대로"
    ],
-   "image": ""
+   "image": "/img/%EA%B8%B0%EB%A5%98-%EB%B0%A9%EB%9E%91%EC%9E%90.webp"
   },
   {
    "name": "유노",
@@ -320,7 +320,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EA%B8%B0%EB%A5%98-%EC%9C%A0%EB%85%B8.webp"
   },
   {
    "name": "구원",
@@ -393,7 +393,7 @@
    "notes": [
     "떠오르는 구름 세트 사용시 파티딜이 더 높고 공명 효율 요구치 10% 감소함"
    ],
-   "image": ""
+   "image": "/img/%EA%B8%B0%EB%A5%98-%EA%B5%AC%EC%9B%90.webp"
   },
   {
    "name": "시그리카",
@@ -452,7 +452,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EA%B8%B0%EB%A5%98-%EC%8B%9C%EA%B7%B8%EB%A6%AC%EC%B9%B4.webp"
   },
   {
    "name": "청초",
@@ -503,7 +503,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EA%B8%B0%EB%A5%98-%EC%B2%AD%EC%B4%88.webp"
   },
   {
    "name": "앙코",
@@ -568,7 +568,7 @@
    "notes": [
     "2체인에 공명 에너지 회복이 달려있어서 2체인 이상이면 공효 요구치가 낮아짐"
    ],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EC%95%99%EC%BD%94.webp"
   },
   {
    "name": "장리",
@@ -629,7 +629,7 @@
    "notes": [
     "2체인에 이화 획득시 크리 25퍼 증가가 있어서 2체인 이상이면 4코 주옵 크리피해 고려"
    ],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EC%9E%A5%EB%A6%AC.webp"
   },
   {
    "name": "브렌트",
@@ -694,7 +694,7 @@
    "notes": [
     "일공피 >> 공% / 용융속성 전용 서포터로 사용하거나, 일반공격 피해 버프를 주는 아군과 사용 최대 공효 280"
    ],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EB%B8%8C%EB%A0%8C%ED%8A%B8.webp"
   },
   {
    "name": "루파",
@@ -759,7 +759,7 @@
    "notes": [
     "1체인에 크확 20퍼 증가가 있어서 1체인 이상이면 4코 주옵 크리피해를 쓸수도 있으나 4코 주옵은 크확이 정배"
    ],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EB%A3%A8%ED%8C%8C.webp"
   },
   {
    "name": "갈브레나",
@@ -828,7 +828,7 @@
    "notes": [
     "메인 에코는 3코 코로사우루스"
    ],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EA%B0%88%EB%B8%8C%EB%A0%88%EB%82%98.webp"
   },
   {
    "name": "모니에",
@@ -886,7 +886,7 @@
    "notes": [
     "기묘한 울림 사용시 3코 공효 2개 필수"
    ],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EB%AA%A8%EB%8B%88%EC%97%90.webp"
   },
   {
    "name": "에이메스",
@@ -949,7 +949,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EC%97%90%EC%9D%B4%EB%A9%94%EC%8A%A4.webp"
   },
   {
    "name": "데니아",
@@ -1008,7 +1008,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EB%8D%B0%EB%8B%88%EC%95%84.webp"
   },
   {
    "name": "경연",
@@ -1059,7 +1059,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EC%9A%A9%EC%9C%B5-%EA%B2%BD%EC%97%B0.webp"
   },
   {
    "name": "절지",
@@ -1124,7 +1124,7 @@
    "notes": [
     "1체인에 공명 에너지 회복이 달려있어서 1체인 이상이면 공효 요구치가 낮아짐"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%91%EA%B2%B0-%EC%A0%88%EC%A7%80.webp"
   },
   {
    "name": "카를로타",
@@ -1184,7 +1184,7 @@
    "notes": [
     "파티에 절지가 있을 시 공효 110이면 충분"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%91%EA%B2%B0-%EC%B9%B4%EB%A5%BC%EB%A1%9C%ED%83%80.webp"
   },
   {
    "name": "능양",
@@ -1249,7 +1249,7 @@
    "notes": [
     "챈 유일 능양 가이드"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%91%EA%B2%B0-%EB%8A%A5%EC%96%91.webp"
   },
   {
    "name": "히유키",
@@ -1311,7 +1311,7 @@
     "풀돌은 4코 공퍼 사용 가능",
     "공격력: 2850 / 크피: 215%"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%91%EA%B2%B0-%ED%9E%88%EC%9C%A0%ED%82%A4.webp"
   },
   {
    "name": "루실라",
@@ -1377,7 +1377,7 @@
     "서리모드 기도셋 메인 에코는 글로모스",
     "풀돌이면 3코 공공"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%91%EA%B2%B0-%EB%A3%A8%EC%8B%A4%EB%9D%BC.webp"
   },
   {
    "name": "수수",
@@ -1434,7 +1434,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EC%9D%91%EA%B2%B0-%EC%88%98%EC%88%98.webp"
   },
   {
    "name": "음림",
@@ -1499,7 +1499,7 @@
    "notes": [
     "2체인에 공명 에너지 회복이 달려있어서 2체인 이상이면 공효 요구치가 낮아짐"
    ],
-   "image": ""
+   "image": "/img/%EC%A0%84%EB%8F%84-%EC%9D%8C%EB%A6%BC.webp"
   },
   {
    "name": "카카루",
@@ -1564,7 +1564,7 @@
    "notes": [
     "1체인에 공명 에너지 회복이 달려있어서 1체인 이상이면 공효 요구치가 낮아짐"
    ],
-   "image": ""
+   "image": "/img/%EC%A0%84%EB%8F%84-%EC%B9%B4%EC%B9%B4%EB%A3%A8.webp"
   },
   {
    "name": "상리요",
@@ -1623,7 +1623,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EC%A0%84%EB%8F%84-%EC%83%81%EB%A6%AC%EC%9A%94.webp"
   },
   {
    "name": "아우구스타",
@@ -1693,7 +1693,7 @@
     "2돌파: 4코 크리/크피 자유",
     "풀돌: 4코 크피"
    ],
-   "image": ""
+   "image": "/img/%EC%A0%84%EB%8F%84-%EC%95%84%EC%9A%B0%EA%B5%AC%EC%8A%A4%ED%83%80.webp"
   },
   {
    "name": "레베카",
@@ -1762,7 +1762,7 @@
    "notes": [
     "2세트 속공 써도 됨 큰 차이 안 남"
    ],
-   "image": ""
+   "image": "/img/%EC%A0%84%EB%8F%84-%EB%A0%88%EB%B2%A0%EC%B9%B4.webp"
   },
   {
    "name": "여별",
@@ -1813,7 +1813,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EC%A0%84%EB%8F%84-%EC%97%AC%EB%B3%84.webp"
   },
   {
    "name": "방랑자",
@@ -1874,7 +1874,7 @@
    "notes": [
     "6돌 + 상시 직검(or 패스 무기)일 경우 크피 옵션에 집중"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%B8%EB%A9%B8-%EB%B0%A9%EB%9E%91%EC%9E%90.webp"
   },
   {
    "name": "카멜리아",
@@ -1933,7 +1933,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EC%9D%B8%EB%A9%B8-%EC%B9%B4%EB%A9%9C%EB%A6%AC%EC%95%84.webp"
   },
   {
    "name": "로코코",
@@ -1998,7 +1998,7 @@
    "notes": [
     "구름 세트 기용시 공효 요구치 -10"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%B8%EB%A9%B8-%EB%A1%9C%EC%BD%94%EC%BD%94.webp"
   },
   {
    "name": "칸타렐라",
@@ -2063,7 +2063,7 @@
    "notes": [
     "로코코 등과 함께 사용 or 절지 대용으로 사용"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%B8%EB%A9%B8-%EC%B9%B8%ED%83%80%EB%A0%90%EB%9D%BC.webp"
   },
   {
    "name": "플로로",
@@ -2132,7 +2132,7 @@
    "notes": [
     "로코코 칸타렐라와 함께 사용"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%B8%EB%A9%B8-%ED%94%8C%EB%A1%9C%EB%A1%9C.webp"
   },
   {
    "name": "치사",
@@ -2197,7 +2197,7 @@
    "notes": [
     "구원과 마찬가지로 2세트로 떠오르는 구름을 선택해서 공효 맞추는게 정신 건강에 좋음"
    ],
-   "image": ""
+   "image": "/img/%EC%9D%B8%EB%A9%B8-%EC%B9%98%EC%82%AC.webp"
   },
   {
    "name": "양양·현령",
@@ -2248,7 +2248,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%EC%9D%B8%EB%A9%B8-%EC%96%91%EC%96%91%C2%B7%ED%98%84%EB%A0%B9.webp"
   },
   {
    "name": "방랑자",
@@ -2309,7 +2309,7 @@
    "notes": [
     "3체인에 공효 20퍼가 달려있어서 3체인 이상이면 공효 요구치가 낮아짐"
    ],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%EB%B0%A9%EB%9E%91%EC%9E%90.webp"
   },
   {
    "name": "벨리나",
@@ -2366,7 +2366,7 @@
     "메인 에코는 돌아갈 곳이 없는 오류",
     "공효만 맞춘다고 생각하고 과투자 ㄴㄴ"
    ],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%EB%B2%A8%EB%A6%AC%EB%82%98.webp"
   },
   {
    "name": "금희",
@@ -2437,7 +2437,7 @@
    "notes": [
     "파티원에 협동 공격 캐릭터 추천 ex) 절지, 음림, 연무"
    ],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%EA%B8%88%ED%9D%AC.webp"
   },
   {
    "name": "파수인",
@@ -2505,7 +2505,7 @@
    "notes": [
     "1코스트는 체퍼 사용"
    ],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%ED%8C%8C%EC%88%98%EC%9D%B8.webp"
   },
   {
    "name": "페비",
@@ -2570,7 +2570,7 @@
    "notes": [
     "메인딜로 기용할시 서포터로 회랑자 채용"
    ],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%ED%8E%98%EB%B9%84.webp"
   },
   {
    "name": "젠니",
@@ -2636,7 +2636,7 @@
     "2돌파 + 필드 편성시 크확 + 20% 페비와 함께 쓰는걸 추천",
     "없다면 아쉬운 대로 회랑자"
    ],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%EC%A0%A0%EB%8B%88.webp"
   },
   {
    "name": "린네",
@@ -2695,7 +2695,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%EB%A6%B0%EB%84%A4.webp"
   },
   {
    "name": "루크",
@@ -2759,7 +2759,7 @@
     "트윈 노바 · 네뷸러스 캐논도 같이 장착해야",
     "회절 피해 보너스로 바뀌니 주의"
    ],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%EB%A3%A8%ED%81%AC.webp"
   },
   {
    "name": "루시",
@@ -2826,7 +2826,7 @@
     }
    ],
    "notes": [],
-   "image": ""
+   "image": "/img/%ED%9A%8C%EC%A0%88-%EB%A3%A8%EC%8B%9C.webp"
   }
  ]
 }
