@@ -23,6 +23,7 @@ Nebula 사이트 모음([nebula.kim](https://nebula.kim))의 하나로, 맨 위 
 | `public/img/` | 캐릭터 초상화 (`속성-이름.webp`). 위키 이미지 주소는 기한이 있는 임시 링크라 파일로 저장 |
 | `scripts/scrape.mjs` | 위키를 읽어서 위 두 곳을 갱신하는 수집 스크립트 |
 | `wrangler.jsonc` | Cloudflare 설정 |
+| `public/_headers` | 캐시 설정: 초상화 1년(주소에 `?v=수집시각`이 붙어서 다시 수집하면 새로 받음), 데이터 5분 |
 | `public/favicon.svg`, `apple-touch-icon.png`, `icon-*.png`, `og.png`, `manifest.webmanifest` | 아이콘·썸네일·홈 화면 설정 (원본은 nebula-hub/docs/og) |
 
 ### characters.json 모양 (캐릭터 하나)

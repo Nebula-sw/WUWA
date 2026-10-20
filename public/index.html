@@ -165,7 +165,7 @@ function card(c) {
   const notes = c.notes.length ? `<div class="sec"><h3>참고사항</h3><ul class="notes">${c.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>` : "";
   return `<article class="card" data-el="${esc(c.element)}">
     <div class="head">
-      <div class="avatar">${c.image ? `<img src="${esc(c.image)}" alt="" loading="lazy">` : esc(c.name[0])}</div>
+      <div class="avatar">${c.image ? `<img src="${esc(c.image)}?v=${version}" alt="" loading="lazy">` : esc(c.name[0])}</div>
       <div>
         <div class="name">${esc(c.name)}</div>
         <div class="pills"><span class="pill el">${esc(c.element)}</span><span class="pill">${esc(c.position)}</span></div>
@@ -199,9 +199,13 @@ function buildFilters() {
   box.querySelectorAll("button").forEach((b) => (b.onclick = () => { state.element = b.dataset.v; buildFilters(); render(); }));
 }
 
+// 초상화 주소 뒤에 붙이는 버전 (수집할 때마다 바뀜 → 그림이 바뀌면 브라우저가 새로 받음)
+let version = ""
+
 fetch("/data/characters.json")
   .then((r) => r.json())
   .then((d) => {
+    version = d.scrapedAt.replace(/\D/g, "")
     state.list = d.characters.map((c) => ({
       ...c,
       // 검색용 글자 모음
